@@ -1,0 +1,199 @@
+@use "../scss/vars/vars.scss" as vars;
+@use "../scss/mixin/mixin.scss" as mixin;
+
+.like {
+  background-color: vars.$accent1-50;
+  color: vars.$state2-400;
+}
+
+//'mobile': width < 740px
+@media only screen and (max-width: 46.1875em) {
+  .products {
+    text-align: center;
+    padding: 16px;
+
+    &__heading {
+      font-weight: bold;
+      font-size: 32px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    &__span-product {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__image {
+      padding: 20px 0;
+    }
+
+    &__box {
+      @include mixin.flexBox(column, center, center);
+      padding: 16px;
+      border: 1px solid vars.$primary-500;
+    }
+
+    &__box:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &__products-icons div:nth-child(n) {
+      border: 1px solid vars.$primary-500;
+      padding: 10px;
+    }
+
+    &__stars {
+      padding: 12px;
+    }
+
+    &__heart:hover {
+      cursor: pointer;
+      transform: rotate(10deg);
+    }
+
+    &__cart:hover {
+      background-color: vars.$accent1-100;
+      cursor: pointer;
+    }
+
+    &__title,
+    &__price {
+      font-size: 20px;
+    }
+
+    &__span-price {
+      padding-left: 5px;
+      font-size: 12px;
+      text-decoration: line-through;
+      color: vars.$primary-600;
+    }
+  }
+}
+
+//'table': width >= 740px and width < 1024px
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .products {
+    text-align: center;
+    padding: 16px;
+
+    &__heading {
+      font-weight: bold;
+      font-size: 32px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 10px;
+    }
+
+    &__span-product {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__image {
+      padding: 20px 0;
+    }
+
+    &__box {
+      @include mixin.flexBox(column, center, center);
+      padding: 16px;
+      border: 1px solid vars.$primary-500;
+    }
+
+    &__products-icons div:nth-child(n) {
+      border: 1px solid vars.$primary-500;
+      padding: 10px;
+    }
+
+    &__stars {
+      padding: 12px;
+    }
+
+    &__cart:hover {
+      background-color: vars.$accent1-100;
+      cursor: pointer;
+    }
+
+    &__title,
+    &__price {
+      font-size: 20px;
+    }
+
+    &__span-price {
+      padding-left: 5px;
+      font-size: 12px;
+      text-decoration: line-through;
+      color: vars.$primary-600;
+    }
+  }
+}
+
+// 'laptop': '1024px',
+@media screen and (min-width: 1024px) {
+  .products {
+    text-align: center;
+    padding: 16px;
+
+    &__heading {
+      font-weight: bold;
+      font-size: 32px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 10px;
+    }
+
+    &__span-product {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__image {
+      padding: 20px 0;
+    }
+
+    &__box {
+      @include mixin.flexBox(column, center, center);
+      padding: 16px;
+      border: 1px solid vars.$primary-500;
+    }
+
+    &__products-icons div:nth-child(n) {
+      border: 1px solid vars.$primary-500;
+      padding: 10px;
+    }
+
+    &__heart {
+      background-color: red;
+    }
+
+    &__stars {
+      padding: 12px;
+    }
+
+    &__cart:hover {
+      background-color: vars.$accent1-100;
+      cursor: pointer;
+    }
+    &__title,
+    &__price {
+      font-size: 20px;
+    }
+
+    &__span-price {
+      padding-left: 5px;
+      font-size: 12px;
+      text-decoration: line-through;
+      color: vars.$primary-600;
+    }
+  }
+}

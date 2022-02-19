@@ -1,0 +1,123 @@
+@use "../scss/vars/vars.scss" as vars;
+@use "../scss/mixin/mixin.scss" as mixin;
+
+//'mobile': width < 740px
+@media only screen and (max-width: 46.1875em) {
+  .home {
+    text-align: center;
+    padding: 16px;
+    min-height: 100vh;
+    background: url("../images/home-img.jpeg") no-repeat;
+    background-size: cover;
+    background-position: left;
+
+    @include mixin.flexBox(column, center, center);
+
+    &__title {
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    &__desc {
+      color: vars.$primary-600;
+      font-size: 12px;
+      padding: 8px 0;
+      line-height: 2;
+    }
+
+    &__btn-get {
+      width: 50%;
+      margin: 8px auto 0 auto;
+      padding: 7.2px 24px;
+      background-color: vars.$accent1-200;
+    }
+
+    &__btn-get:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+  }
+}
+
+//'table': width >= 740px and width < 1024px
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .home {
+    text-align: start;
+    padding: 16px;
+    min-height: 100vh;
+    background: url("../images/home-img.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include mixin.flexBox(column, start, center);
+
+    &__title {
+      font-weight: bold;
+      font-size: 36px;
+      text-transform: uppercase;
+      width: 60%;
+    }
+
+    &__desc {
+      color: vars.$primary-600;
+      font-size: 12px;
+      padding: 8px 0;
+      width: 59%;
+      line-height: 2;
+    }
+
+    &__btn-get {
+      width: 23%;
+      padding: 7.2px 24px;
+      background-color: vars.$accent1-200;
+    }
+
+    &__btn-get:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+  }
+}
+
+// 'laptop': '1024px',
+@media screen and (min-width: 1024px) {
+  .home {
+    text-align: start;
+    padding: 16px;
+    min-height: 100vh;
+    background: url("../images/home-img.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include mixin.flexBox(column, start, center);
+
+    &__title {
+      font-weight: bold;
+      font-size: 60px;
+      text-transform: uppercase;
+      width: 60%;
+    }
+
+    &__desc {
+      color: vars.$primary-100;
+      font-size: 20px;
+      padding: 10px 0;
+      width: 59%;
+      line-height: 2;
+    }
+
+    &__btn-get {
+      width: 14%;
+      margin-top: 10px;
+      padding: 7.2px 24px;
+      background-color: vars.$accent1-200;
+    }
+
+    &__btn-get:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+  }
+}

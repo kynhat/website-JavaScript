@@ -1,0 +1,641 @@
+@use "../scss/vars/vars.scss" as vars;
+@use "../scss/mixin/mixin.scss" as mixin;
+
+.number-cart {
+  color: vars.$primary-100;
+  width: 23px;
+  height: 13px;
+  border-radius: 50%;
+  padding: 3px;
+  text-align: center;
+  font-size: 9px;
+  right: 0;
+  transform: translate(-21px, 22px);
+  position: absolute;
+}
+
+//'mobile': width < 740px
+@media only screen and (max-width: 46.1875em) {
+  //header-search
+  .header {
+    position: fixed;
+    width: 100%;
+
+    &__contaner {
+      @include mixin.flexBox(row, center, space-between);
+      padding: 12px 16px;
+      background-color: vars.$secondary-500;
+    }
+
+    &__link {
+      color: vars.$accent2-800;
+      padding: 7.2px 24px;
+      margin: 12px 0;
+    }
+
+    &__right:nth-child(n) {
+      cursor: pointer;
+      color: vars.$accent3-50;
+    }
+
+    &__right i:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &__search {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &__cart {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &__menu-bar {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      bottom: 0;
+      left: 0;
+    }
+
+    &__left {
+      width: 58px;
+      height: 48px;
+      object-fit: cover;
+    }
+
+    &__search-input {
+      display: flex;
+      background-color: vars.$accent3-50;
+      color: black;
+      padding: 8px;
+      position: absolute;
+      width: 90%;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      bottom: -60%;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+
+    &__label {
+      cursor: pointer;
+      color: black;
+
+      &:hover {
+        color: vars.$accent1-300;
+      }
+    }
+  }
+
+  //header-cart
+  .header {
+    &__cart-item-container {
+      position: absolute;
+      background-color: vars.$accent3-50;
+      width: 85%;
+      height: calc(100vh - 9.5rem);
+      right: 0;
+      top: 100%;
+      padding: 0 15px;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+
+    &__cart-item {
+      @include mixin.flexBox(row, center, start);
+      gap: 15px;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    &__cart-image {
+      width: 64px;
+      height: 56px;
+      object-fit: cover;
+    }
+
+    &__title {
+      @include mixin.flexBox(row, center, center);
+      color: vars.$accent2-900;
+      font-size: 10px;
+      padding: 10px;
+    }
+
+    // &__cart-title div:nth-child(n) {
+    //   margin-right: 10px;
+    //   background-color: red;
+    // }
+
+    &__cart-close {
+      width: 20%;
+      color: vars.$accent2-700;
+    }
+
+    &__wrapper {
+      @include mixin.flexBox(row, center, center);
+    }
+
+    &__cart-count {
+      width: 10%;
+      font-size: 10px;
+      color: vars.$accent2-800;
+    }
+    
+    &__total {
+      width: 20%;
+      font-size: 10px;
+      color: vars.$accent2-900;
+    }
+
+    &__btn-danger {
+      width: 43%;
+      height: 15px;
+      border-radius: 20%;
+      background-color: vars.$state2-500;
+      cursor: pointer;
+    }
+
+    &__cart-desc {
+      color: vars.$accent2-800;
+      font-weight: bold;
+      width: 30%;
+      padding: 10px;
+      font-size: 10px;
+    }
+
+    &__cart-price {
+      width: 20%;
+      text-align: center;
+      color: vars.$accent1-300;
+      font-size: 10px;
+    }
+
+    &__btn-checkout {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      background-color: vars.$accent1-300;
+    }
+
+    &__btn-checkout:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+
+
+    &__btn-delete-all {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      background-color: vars.$state2-500;
+      cursor: pointer;
+    }
+
+    &__btn-delete-all:hover{
+      box-shadow: 0 5px vars.$state2-600;
+      transform: translateY(4px);
+    }
+  }
+
+  //header menu
+  .header {
+    &__nav {
+      @include mixin.flexBox(column, start, start);
+      color: black;
+      position: absolute;
+      background-color: vars.$accent3-50;
+      width: 70%;
+      height: calc(100vh - 9.5rem);
+      right: 0;
+      top: 100%;
+      padding: 0 15px;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+
+  .is-active {
+    transform: scaleX(1);
+  }
+
+  .number-cart {
+    transform: translate(-41px, 18px);
+  }
+}
+
+//'table': width >= 740px and width < 1024px
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  //header-search
+  .header {
+    position: fixed;
+    width: 100%;
+
+    &__contaner {
+      @include mixin.flexBox(row, center, space-between);
+      padding: 12px 16px;
+      background-color: vars.$secondary-500;
+    }
+
+    &__link {
+      padding: 7.2px 24px;
+      margin: 12px 0;
+    }
+
+    &__right:nth-child(n) {
+      cursor: pointer;
+      color: vars.$accent3-50;
+    }
+
+    &__right i:last-child {
+      display: none;
+      visibility: hidden;
+    }
+
+    &__right i:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &__search {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &__cart {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &__menu-bar {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      bottom: 0;
+      left: 0;
+    }
+
+    &__left {
+      width: 58px;
+      height: 48px;
+      object-fit: cover;
+    }
+
+    &__search-input {
+      display: flex;
+      background-color: vars.$accent3-50;
+      color: black;
+      padding: 8px;
+      position: absolute;
+      width: 40%;
+      right: 0;
+      margin-right: 5%;
+      bottom: -60%;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+
+    &__label {
+      cursor: pointer;
+      color: black;
+
+      &:hover {
+        color: vars.$accent1-300;
+      }
+    }
+  }
+
+  //header-cart
+  .header {
+    &__cart-item-container {
+      position: absolute;
+      background-color: vars.$accent3-50;
+      width: 35%;
+      height: calc(100vh - 9.5rem);
+      right: 0;
+      top: 100%;
+      padding: 0 15px;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+
+    &__cart-item {
+      @include mixin.flexBox(row, center, start);
+      gap: 15px;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    &__cart-image {
+      width: 64px;
+      height: 56px;
+      object-fit: cover;
+    }
+
+    &__cart-close {
+      width: 20%;
+      color: vars.$accent2-700;
+    }
+
+    &__wrapper {
+      @include mixin.flexBox(row, center, center);
+    }
+
+    &__cart-count {
+      width: 10%;
+      font-size: 10px;
+      color: vars.$accent2-800;
+    }
+    
+    &__total {
+      width: 20%;
+      font-size: 10px;
+      color: vars.$accent2-900;
+    }
+
+    &__btn-danger {
+      width: 43%;
+      height: 15px;
+      border-radius: 20%;
+      background-color: vars.$state2-500;
+      cursor: pointer;
+    }
+
+    &__cart-desc {
+      color: vars.$accent2-800;
+      font-weight: bold;
+      width: 30%;
+      padding: 10px;
+      font-size: 10px;
+    }
+
+    &__cart-price {
+      width: 20%;
+      text-align: center;
+      color: vars.$accent1-300;
+      font-size: 10px;
+    }
+
+    &__btn-checkout {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      background-color: vars.$accent1-300;
+    }
+
+    &__btn-checkout:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+
+
+    &__btn-delete-all {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      background-color: vars.$state2-500;
+      cursor: pointer;
+    }
+
+    &__btn-delete-all:hover{
+      box-shadow: 0 5px vars.$state2-600;
+      transform: translateY(4px);
+    }
+  }
+
+  //header menu
+  .header {
+    &__nav {
+      @include mixin.flexBox(row, center, center);
+      // color: white;
+      // position: absolute;
+      // background-color: vars.$accent3-50;
+      // padding: 0 15px;
+      // left: 19%;
+    }
+  }
+
+  .is-active {
+    transform: scaleX(1);
+  }
+}
+
+// 'laptop': '1024px',
+@media screen and (min-width: 1024px) {
+  //header-search
+  .header {
+    position: fixed;
+    width: 100%;
+
+    &__contaner {
+      @include mixin.flexBox(row, center, space-between);
+      padding: 12px 16px;
+      background-color: vars.$secondary-500;
+    }
+
+    &__link {
+      padding: 7.2px 24px;
+      margin: 12px 0;
+      font-size: 16px;
+    }
+
+    &__right:nth-child(n) {
+      cursor: pointer;
+      color: vars.$accent3-50;
+    }
+
+    &__right i:last-child {
+      display: none;
+      visibility: hidden;
+    }
+
+    &__right i:not(:last-child) {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    &__search:active {
+      color: vars.$accent1-300;
+    }
+
+    &__cart {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &__menu-bar {
+      &:active {
+        color: vars.$accent1-300;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      bottom: 0;
+      left: 0;
+    }
+
+    &__left {
+      width: 58px;
+      height: 48px;
+      object-fit: cover;
+    }
+
+    &__search-input {
+      display: flex;
+      background-color: vars.$accent3-50;
+      color: black;
+      padding: 8px;
+      position: absolute;
+      width: 40%;
+      right: 0;
+      margin-right: 5%;
+      bottom: -60%;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+
+    &__label {
+      cursor: pointer;
+      color: black;
+
+      &:hover {
+        color: vars.$accent1-300;
+      }
+    }
+  }
+
+  //header-cart
+  .header {
+    &__cart-item-container {
+      position: absolute;
+      background-color: vars.$accent3-50;
+      width: 31%;
+      height: calc(100vh - 9.5rem);
+      right: 0;
+      top: 100%;
+      padding: 0 15px;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+
+    &__cart-item {
+      @include mixin.flexBox(row, center, center);
+      gap: 15px;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    &__cart-image {
+      width: 64px;
+      height: 56px;
+      object-fit: cover;
+    }
+
+    &__cart-close {
+      width: 20%;
+      color: vars.$accent2-700;
+    }
+
+    &__wrapper {
+      @include mixin.flexBox(row, center, center);
+    }
+
+    &__cart-count {
+      width: 10%;
+      font-size: 10px;
+      color: vars.$accent2-800;
+    }
+    
+    &__total {
+      width: 20%;
+      color: vars.$accent2-900;
+    }
+
+    &__btn-danger {
+      width: 47%;
+      height: 19px; 
+      border-radius: 20%;
+      background-color: vars.$state2-500;
+      cursor: pointer;
+    }
+
+    &__cart-desc {
+      color: vars.$accent2-800;
+      font-weight: bold;
+      width: 30%;
+      padding: 10px;
+    }
+
+    &__cart-price {
+      width: 20%;
+      text-align: center;
+      color: vars.$accent1-300;
+      font-size: 12px;
+    }
+
+    &__btn-checkout {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      background-color: vars.$accent1-300;
+      cursor: pointer;
+    }
+
+    &__btn-checkout:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+
+    &__btn-delete-all {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      background-color: vars.$state2-500;
+      cursor: pointer;
+    }
+
+    &__btn-delete-all:hover{
+      box-shadow: 0 5px vars.$state2-600;
+      transform: translateY(4px);
+    }
+  }
+
+  //header menu
+  .header {
+    &__nav {
+      @include mixin.flexBox(row, center, space-between);
+    }
+  }
+
+  .is-active {
+    transform: scaleX(1);
+  }
+}

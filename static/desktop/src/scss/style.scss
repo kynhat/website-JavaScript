@@ -1,0 +1,49 @@
+@use "../scss/vars/vars.scss" as vars;
+/*
+html { font-size: 6.25%; } 
+body { font-size: 14rem; }  =14px 
+h1   { font-size: 24rem; } =24px 
+*/
+
+
+*{ 
+  font-family: 'Roboto', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: vars.$secondary-500;
+  color: vars.$primary-50;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: vars.$primary-100;
+  display: block;
+  font-size: 14px;
+  text-decoration: none; /* no underline */
+}
+
+.fa {
+  margin-left: 2px;
+}

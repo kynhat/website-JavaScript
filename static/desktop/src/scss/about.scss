@@ -1,0 +1,222 @@
+@use "../scss/vars/vars.scss" as vars;
+@use "../scss/mixin/mixin.scss" as mixin;
+
+$colorBg: #13131a;
+@media only screen and (max-width: 46.1875em) {
+  .about {
+    padding: 16px;
+
+    &__heading {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    &__span-about {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      padding: 16px;
+    }
+
+    &__question {
+      font-size: 24px;
+    }
+
+    &__desc {
+      line-height: 2;
+      padding: 8px 0;
+      font-size: 13px;
+      color: vars.$primary-600;
+    }
+
+    &__btn-more {
+      width: 50%;
+      text-align: center;
+      background-color: vars.$accent1-200;
+      margin: 8px 0;
+      padding: 7.2px 24px;
+    }
+  }
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .about {
+    padding: 16px;
+
+    img {
+      width: 100%;
+    }
+    &__image {
+      // flex-grow: 1;
+      // flex-shrink: 1;
+      // flex-basis: 45rem;
+      flex: 1 1 45rem;
+    }
+
+    &__heading {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    &__span-about {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      padding: 16px;
+    }
+
+    &__question {
+      font-size: 24px;
+    }
+
+    &__desc {
+      line-height: 2;
+      padding: 8px 0;
+      font-size: 13px;
+      color: vars.$primary-600;
+    }
+
+    &__btn-more {
+      width: 16%;
+      text-align: center;
+      background-color: vars.$accent1-200;
+      margin: 8px 0;
+      padding: 7.2px 24px;
+    }
+
+    &__btn-more:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+  }
+}
+
+// 'laptop': '1024px',
+@media screen and (min-width: 1024px) {
+  .about {
+    padding: 16px;
+
+    img {
+      width: 100%;
+    }
+    &__image {
+      // flex-grow: 1;
+      // flex-shrink: 1;
+      // flex-basis: 45rem;
+      flex: 1 1 45rem;
+    }
+
+    &__heading {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    &__span-about {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      padding: 16px;
+    }
+
+    &__question {
+      font-size: 30px;
+    }
+
+    &__desc {
+      line-height: 2;
+      padding: 8px 0;
+      font-size: 16px;
+      color: vars.$primary-50;
+    }
+
+    &__btn-more {
+      width: 12%;
+      text-align: center;
+      background-color: vars.$accent1-200;
+      margin: 8px 0;
+      padding: 7.2px 24px;
+    }
+
+    &__btn-more:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+  }
+}
+
+// 'desktop': '1280px',
+@media screen and (min-width: 1280px) {
+  .about {
+    padding: 16px;
+
+    img {
+      width: 100%;
+    }
+
+    &__container {
+      display: flex;
+      padding: 20px 7%;
+    }
+
+    &__heading {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    &__span-about {
+      color: vars.$accent1-300;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      padding: 16px;
+      @include mixin.flexBox(column, start, center);
+      background-color: $colorBg;
+    }
+
+    &__question {
+      font-size: 30px;
+    }
+
+    &__desc {
+      line-height: 2;
+      padding: 8px 0;
+      font-size: 16px;
+      color: vars.$primary-50;
+    }
+
+    &__btn-more {
+      width: 18%;
+      text-align: center;
+      background-color: vars.$accent1-200;
+      margin: 8px 0;
+      padding: 7.2px 24px;
+    }
+
+    &__btn-more:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+  }
+}

@@ -1,0 +1,99 @@
+//khai baos mixin tao phân chung
+//$height: $width là giá trị mặc định nếu như mình không truyền height vào thì nó sẽ lấy giá trị của width
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flexBox (
+  $flex-direction: "row",
+  $align-items: "center",
+  $justify-content: "start"
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin absoluteCenter($direction: "left") {
+  position: absolute;
+
+  @if $direction == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $direction == "left" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $direction == "top" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin shapes($shape: "square") {
+  @if $shape == "square" {
+    width: 100px;
+    height: 100px;
+  }
+
+  @if $shape == "rectangle" {
+    width: 200px;
+    height: 100px;
+  }
+
+  @if $shape == "circle" {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  @if $shape == "oval" {
+    width: 200px;
+    height: 100px;
+    border-radius: 100% / 50px;
+  }
+
+  @if $shape == "triangleUp" {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgb(8, 8, 8);
+  }
+
+  @if $shape == "triangleDown" {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid rgb(8, 8, 8);
+  }
+}
+
+@mixin button($width) {
+  width: $width;
+  padding: 5px;
+  border: 1px solid springgreen;
+  text-align: center;
+  border-radius: 2rem 0 2rem 2rem;
+}
+
+@mixin maxWidth($value) {
+  @media screen and (max-width: $value) {
+    //sass sẽ tự hiểu là truyền vào nội dung sau
+    @content;
+  }
+}
+
+@mixin minWidth($value) {
+  @media screen and (min-width: $value) {
+    //sass sẽ tự hiểu là truyền vào nội dung sau
+    @content;
+  }
+}

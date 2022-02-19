@@ -1,0 +1,219 @@
+@use "../scss/vars/vars.scss" as vars;
+@use "../scss/mixin/mixin.scss" as mixin;
+
+//'mobile': width < 740px
+@media only screen and (max-width: 46.1875em) {
+  .menu {
+    padding: 16px;
+    color: vars.$accent2-900;
+
+    &__box-container {
+      @include mixin.flexBox(column, center, center);
+      // border: 1px solid vars.$primary-400;
+      gap: 15px;
+    }
+
+    &__heading {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 36px;
+      font-weight: bold;
+      padding-bottom: 28px;
+      color: vars.$primary-100;
+    }
+
+    &__span-menu {
+      text-transform: uppercase;
+      color: vars.$accent1-200;
+    }
+
+    &__title {
+      padding: 8px 0;
+      font-weight: bold;
+    }
+
+    &__price {
+      padding: 4px 0;
+    }
+
+    &__span-price {
+      font-size: 12px;
+      // gach nganh chu
+      text-decoration: line-through;
+      font-weight: lighter;
+      color: vars.$accent3-300;
+    }
+
+    &__btn-add {
+      background-color: vars.$accent1-200;
+      padding: 7.2px 24px;
+      cursor: pointer;
+    }
+
+    &__btn-add:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+
+    &__box {
+      width: 100%;
+      color: vars.$primary-100;
+      border: 1px solid vars.$primary-400;
+      padding: 40px;
+      cursor: pointer;
+      @include mixin.flexBox(column, center, center);
+    }
+
+    &__box:hover {
+      background-color: vars.$accent3-100;
+      color: vars.$secondary-500;
+    }
+  }
+}
+
+//'table': width >= 740px and width < 1024px
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .menu {
+    padding: 16px;
+    color: vars.$accent2-900;
+
+    &__box-container {
+      display: grid;
+      // auto-fit : Tức là tự động điền các ô có chiều rộng nhỏ nhất là 200px và lớn nhất là 1fr (Tìm hiểu đơn vị fr).
+
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 10px;
+    }
+
+    &__heading {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 36px;
+      font-weight: bold;
+      padding-bottom: 28px;
+      color: vars.$primary-100;
+    }
+
+    &__span-menu {
+      text-transform: uppercase;
+      color: vars.$accent1-200;
+    }
+
+    &__title {
+      padding: 8px 0;
+      font-weight: bold;
+    }
+
+    &__price {
+      padding: 4px 0;
+    }
+
+    &__span-price {
+      font-size: 12px;
+      // gach nganh chu
+      text-decoration: line-through;
+      font-weight: lighter;
+      color: vars.$accent3-300;
+    }
+
+    &__btn-add {
+      background-color: vars.$accent1-200;
+      padding: 7.2px 24px;
+      cursor: pointer;
+    }
+
+    &__btn-add:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+
+    &__box {
+      width: 100%;
+      color: vars.$primary-100;
+      border: 1px solid vars.$primary-400;
+      padding: 40px;
+      cursor: pointer;
+      @include mixin.flexBox(column, center, center);
+    }
+
+    &__box:hover {
+      background-color: vars.$accent3-100;
+      color: vars.$secondary-500;
+    }
+  }
+}
+
+// 'laptop': '1024px',
+@media screen and (min-width: 1024px) {
+  .menu {
+    padding: 16px;
+    color: vars.$accent2-900;
+
+    &__box-container {
+      display: grid;
+      // auto-fit : Tức là tự động điền các ô có chiều rộng nhỏ nhất là 200px và lớn nhất là 1fr (Tìm hiểu đơn vị fr).
+
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 10px;
+    }
+
+    &__heading {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 36px;
+      font-weight: bold;
+      padding-bottom: 28px;
+      color: vars.$primary-100;
+    }
+
+    &__span-menu {
+      text-transform: uppercase;
+      color: vars.$accent1-200;
+    }
+
+    &__title {
+      padding: 8px 0;
+      font-weight: bold;
+    }
+
+    &__price {
+      padding: 4px 0;
+    }
+
+    &__span-price {
+      font-size: 12px;
+      // gach nganh chu
+      text-decoration: line-through;
+      font-weight: lighter;
+      color: vars.$accent3-300;
+    }
+
+    &__btn-add {
+      background-color: vars.$accent1-200;
+      padding: 7.2px 24px;
+      cursor: pointer;
+    }
+
+    &__btn-add:active {
+      background-color: vars.$accent1-300;
+      box-shadow: 0 5px vars.$accent1-800;
+      transform: translateY(4px);
+    }
+
+    &__box {
+      width: 100%;
+      color: vars.$primary-100;
+      border: 1px solid vars.$primary-400;
+      padding: 40px;
+      cursor: pointer;
+      @include mixin.flexBox(column, center, center);
+    }
+
+    &__box:hover {
+      background-color: vars.$accent3-100;
+      color: vars.$secondary-500;
+    }
+  }
+}

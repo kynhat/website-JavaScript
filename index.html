@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/desktop/src/css/reset.css">
+  <link rel="stylesheet" href="static/desktop/src/css/vendor.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="number-cart"></div>
+    <div class="header__contaner">
+      <img alt="" class="header__left">
+
+      <div class="header__cart-item-container">
+        <div class="header__cart-content"></div>
+        <button class="header__btn-checkout">Checkout Now</button>
+        <button type="button" onclick="deleteAllItemCart()" class="header__btn-delete-all">Delete All</button>
+      </div>
+
+      <div class="header__nav">
+        <a class="header__link" href="#home">Home</a>
+        <a class="header__link" href="#about">About</a>
+        <a class="header__link" href="#menu">Menu</a>
+        <a class="header__link" href="#products">Products</a>
+        <a class="header__link" href="#peview">Review</a>
+        <a class="header__link" href="#contact">Contact</a>
+        <a class="header__link" href="#blogs">Blogs</a>
+      </div>
+
+      <div class="header__right">
+        <i class="fa fa-search header__search"></i>
+        <i class="fa fa-shopping-cart header__cart"></i>
+        <i class="fa fa-bars header__menu-bar"></i>
+      </div>
+    </div>
+  </div>
+
+  <section class="home" id="home">
+    <div class="home__content">
+      <h3 class="home__title">fresh coffee in the morning</h3>
+
+      <p class="home__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat labore, sint cupiditate
+        distinctio tempora reiciendis.</p>
+
+      <a href="#" class="home__btn-get">get yours now</a>
+    </div>
+  </section><!-- home -->
+
+  <section class="about" id="about">
+    <h1 class="about__heading"> <span class="about__span-about">about</span> us </h1>
+
+    <div class="about__container">
+      <div class="about__image">
+        <img src="static/desktop/src/images/about-img.jpeg" alt="">
+      </div>
+
+      <div class="about__content">
+        <p class="about__question">what makes our coffee special?</p>
+
+        <p class="about__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis,
+          nihil voluptas
+          culpa! Neque consectetur obcaecati sapiente?</p>
+
+        <a href="#" class="about__btn-more">learn more</a>
+      </div>
+    </div>
+  </section>
+  <!-- about -->
+
+  <section class="menu" id="menu">
+    <p class="menu__heading"> our <span class="menu__span-menu">menu</span> </p>
+
+    <div class="menu__box-container">
+      <div class="menu__box">
+        <img class="menu__image" src="static/desktop/src/images/menu-1.png" alt="">
+        <h3 class="menu__title">tasty and healty</h3>
+        <div class="menu__price">$15.99 <span class="menu__span-price">15</span></div>
+        <button type="button" class="menu__btn-add" name="tasty" id="0" onclick="addToCart(this)" price="15">add to
+          cart</button>
+      </div>
+
+      <div class="menu__box">
+        <img class="menu__image" src="static/desktop/src/images/menu-2.png" alt="">
+        <h3 class="menu__title">banana and healty</h3>
+        <div class="menu__price">$15.99 <span class="menu__span-price">14</span></div>
+        <button type="button" class="menu__btn-add" name="banana" id="1" onclick="addToCart(this)" price="14">add to
+          cart</button>
+      </div>
+
+      <div class="menu__box">
+        <img class="menu__image" src="static/desktop/src/images/menu-3.png" alt="">
+        <h3 class="menu__title">apple and healty</h3>
+        <div class="menu__price">$15.99 <span class="menu__span-price">13</span></div>
+        <button type="button" class="menu__btn-add" name="apple and healty" id="2" onclick="addToCart(this)"
+          price="13">add to cart</button>
+      </div>
+
+      <div class="menu__box">
+        <img class="menu__image" src="static/desktop/src/images/menu-4.png" alt="">
+        <h3 class="menu__title">lemon and healty</h3>
+        <div class="menu__price">$15.99 <span class="menu__span-price">10</span></div>
+        <button type="button" class="menu__btn-add" name="lemon" id="3" onclick="addToCart(this)" price="10">add to
+          cart</button>
+      </div>
+
+      <div class="menu__box">
+        <img class="menu__image" src="static/desktop/src/images/menu-5.png" alt="">
+        <h3 class="menu__title">food and healty</h3>
+        <div class="menu__price">$15.99 <span class="menu__span-price">11</span></div>
+        <button type="button" class="menu__btn-add" name="food" id="4" onclick="addToCart(this)" price="11">add to
+          cart</button>
+      </div>
+
+      <div class="menu__box">
+        <img class="menu__image" src="static/desktop/src/images/menu-6.png" alt="">
+        <h3 class="menu__title">beef and healty</h3>
+        <div class="menu__price">$15.99 <span class="menu__span-price">7</span></div>
+        <button type="button" class="menu__btn-add" name="beef" id="5" onclick="addToCart(this)" price="7">add to
+          cart</button>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- menu -->
+
+  <section class="products" id="products">
+    <h1 class="products__heading"> our <span class="products__span-product">products</span> </h1>
+
+    <div class="products__container"></div>
+  </section><!-- product -->
+
+  <div class="back-top">
+    <button id="back-top" title="Go to top">
+      <i class="fa fa-angle-double-up top"></i>
+    </button>
+  </div>
+</body>
+
+<script type="text/javascript" src="static/desktop/src/js/app.js"></script>
+<script type="text/javascript" src="static/desktop/src/js/scroll.js"></script>
+<script type="text/javascript" src="static/desktop/src/js/cart.js"></script>
+<script type="text/javascript" src="static/desktop/src/js/notification.js"></script>
+</html>
