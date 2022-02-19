@@ -2,6 +2,11 @@
 @use "../scss/mixin/mixin.scss" as mixin;
 
 $colorBg: #13131a;
+
+.about {
+  background-color: vars.$secondary-500;
+}
+
 @media only screen and (max-width: 46.1875em) {
   .about {
     padding: 16px;

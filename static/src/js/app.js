@@ -1,6 +1,6 @@
 (function () {
   // insret image
-  const IMAGE_URL = "/static/desktop/src/images/";
+  const IMAGE_URL = "/static/src/images/";
   const image = document.querySelector("img");
 
   //create arrayObject
@@ -29,32 +29,32 @@
   const header = document.querySelector(".header");
   header.appendChild(divSearch);
 
-    //lk = click
-    const lk_search = document.querySelector(".header__search");
-    const lk_cart =  document.querySelector(".header__cart");
-    const lk_menu = document.querySelector(".header__menu-bar");
-    //selector class
-    const searchInput = document.querySelector(".header__search-input");
-    const cartItem = document.querySelector(".header__cart-item-container");
-    const menuNav = document.querySelector(".header__nav");
-    
-    lk_search.addEventListener("click", () => {
-      searchInput.classList.toggle("is-active");
-      cartItem.classList.remove("is-active");
-      menuNav.classList.remove("is-active");
-    });
+  //lk = click
+  const lk_search = document.querySelector(".header__search");
+  const lk_cart = document.querySelector(".header__cart");
+  const lk_menu = document.querySelector(".header__menu-bar");
+  //selector class
+  const searchInput = document.querySelector(".header__search-input");
+  const cartItem = document.querySelector(".header__cart-item-container");
+  const menuNav = document.querySelector(".header__nav");
 
-    lk_cart.addEventListener("click", () => {
-      cartItem.classList.toggle("is-active");
-      searchInput.classList.remove("is-active");
-      menuNav.classList.remove("is-active");
-    });
+  lk_search.addEventListener("click", () => {
+    searchInput.classList.toggle("is-active");
+    cartItem.classList.remove("is-active");
+    menuNav.classList.remove("is-active");
+  });
 
-    lk_menu.addEventListener("click", () => {
-      menuNav.classList.toggle("is-active");
-      searchInput.classList.remove("is-active");
-      cartItem.classList.remove("is-active");
-    });
+  lk_cart.addEventListener("click", () => {
+    cartItem.classList.toggle("is-active");
+    searchInput.classList.remove("is-active");
+    menuNav.classList.remove("is-active");
+  });
+
+  lk_menu.addEventListener("click", () => {
+    menuNav.classList.toggle("is-active");
+    searchInput.classList.remove("is-active");
+    cartItem.classList.remove("is-active");
+  });
 
   function setAttributes(el, attrs) {
     for (var key in attrs) {
@@ -62,18 +62,31 @@
     }
   }
 
-    //when click out close searh and cart and  menu
-    document.addEventListener('click', (event) => {
-      if(!lk_menu.contains(event.target)) {
-        menuNav.classList.remove("is-active");
-        // cartItem.classList.remove("is-active");
-        // menuNav.classList.remove("is-active");
-      }
+  function handleClickOutMenu(event) {
+    if (
+      !lk_menu.contains(event.target) &&
+      !event.target.matches(".header__nav")
+    ) {
+      menuNav.classList.remove("is-active");
+    }
 
-      if(!lk_cart.contains(event.target)) {
-        cartItem.classList.remove("is-active");
-      }
-    });
+    if (
+      !lk_cart.contains(event.target) &&
+      !event.target.matches(".header__cart-item-container") &&
+      !event.target.matches(".header__cart-desc") &&
+      !event.target.matches(".header__cart-count") &&
+      !event.target.matches(".header__cart-price") &&
+      !event.target.matches(".header__cart-close") &&
+      !event.target.matches(".header__total") &&
+      !event.target.matches(".header__wrapper") &&
+      !event.target.matches(".header__btn-danger") &&
+      !event.target.matches(".header__btn-delete-all")
+    ) {
+      cartItem.classList.remove("is-active");
+    }
+  }
+  //when click out close searh and cart and  menu
+  document.addEventListener("click", handleClickOutMenu);
 
   // giống như ham main()
   var init = () => {

@@ -12,6 +12,7 @@
   animation: noti 4s forwards 1 linear;
   justify-content: end;
   align-items: center;
+  z-index: 1;
 
   &__image {
     width: 100%;

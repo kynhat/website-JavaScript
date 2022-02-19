@@ -1,0 +1,31 @@
+.checkout {
+  &__image {
+    object-fit: cover;
+    z-index: 2;
+    width: 100%;
+  }
+
+  &__hidden-all {
+    display: none;
+    visibility: hidden;
+  }
+
+  &__hide {
+    display: none;
+    visibility: hidden;
+  }
+
+  &__container {
+    width: 50%;
+    height: 50%;
+  }
+
+  @keyframes leaves {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(2.0);
+    }
+}
+}

@@ -1,7 +1,7 @@
 // ************************************************
 // Shopping Cart API
 // ************************************************
-const IMAGE_URL = "/static/desktop/src/images/";
+const IMAGE_URL = "/static/src/images/";
 const arrayMenuItem = [
   {
     id: 1,
@@ -373,12 +373,6 @@ document
         product();
       }
     }
-  });
-
-  checkout.addEventListener("click", event => {
-    const divSuccessFull = document.createElement("div");
-    divSuccessFull.className ="successFull";
-    document.body.appendChild(divSuccessFull);
   });
 
 lk__search.addEventListener("click", event => {

@@ -1,6 +1,10 @@
 @use "../scss/vars/vars.scss" as vars;
 @use "../scss/mixin/mixin.scss" as mixin;
 
+.products {
+  background-color: vars.$secondary-500;
+}
+
 .like {
   background-color: vars.$accent1-50;
   color: vars.$state2-400;

@@ -543,6 +543,10 @@
     transform: scaleX(1);
   }
 }
+.about {
+  background-color: #000000;
+}
+
 @media only screen and (max-width: 46.1875em) {
   .about {
     padding: 16px;
@@ -722,6 +726,10 @@
     transform: translateY(4px);
   }
 }
+.menu {
+  background-color: #000000;
+}
+
 @media only screen and (max-width: 46.1875em) {
   .menu {
     padding: 16px;
@@ -907,6 +915,10 @@
     color: #000000;
   }
 }
+.products {
+  background-color: #000000;
+}
+
 .like {
   background-color: #FFEECF;
   color: #D55A5F;
@@ -1096,7 +1108,6 @@ html {
 }
 
 body {
-  background-color: #000000;
   color: #FFFFFF;
 }
 
@@ -1268,6 +1279,7 @@ a {
   animation: noti 4s forwards 1 linear;
   justify-content: end;
   align-items: center;
+  z-index: 1;
 }
 .noti__image {
   width: 100%;

@@ -1,6 +1,10 @@
 @use "../scss/vars/vars.scss" as vars;
 @use "../scss/mixin/mixin.scss" as mixin;
 
+.menu {
+  background-color: vars.$secondary-500;
+}
+
 //'mobile': width < 740px
 @media only screen and (max-width: 46.1875em) {
   .menu {
@@ -9,7 +13,6 @@
 
     &__box-container {
       @include mixin.flexBox(column, center, center);
-      // border: 1px solid vars.$primary-400;
       gap: 15px;
     }
 
