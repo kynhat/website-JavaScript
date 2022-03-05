@@ -5,9 +5,36 @@
   background-color: vars.$secondary-500;
 }
 
+.products {
+  img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__sort {
+    display: flex;
+    border: 1px solid;
+    padding: 15px;
+    width: 1  0%;
+    justify-content: end;
+    margin-bottom: 20px;
+  }
+}
+
 .like {
   background-color: vars.$accent1-50;
   color: vars.$state2-400;
+}
+
+.hide-image {
+  display: none;
+  visibility: hidden;
 }
 
 //'mobile': width < 740px
@@ -190,6 +217,11 @@
     }
     &__title,
     &__price {
+      img {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+      }
       font-size: 20px;
     }
 

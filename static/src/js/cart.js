@@ -64,15 +64,15 @@ var shoppingCart = (function () {
 
   // Save cart
   function saveCart() {
-    sessionStorage.setItem("shoppingCart", JSON.stringify(cart));
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
   }
 
   // Load cart
   function loadCart() {
-    cart = JSON.parse(sessionStorage.getItem("shoppingCart"));
+    cart = JSON.parse(localStorage.getItem("shoppingCart"));
   }
 
-  if (sessionStorage.getItem("shoppingCart") != null) {
+  if (localStorage.getItem("shoppingCart") != null) {
     loadCart();
   }
 
@@ -208,120 +208,6 @@ function displayCart() {
   cartContent.innerHTML = output;
 }
 
-function product() {
-  var outputProduct = "";
-
-  for (var i in arrayMenuItem) {
-    let image = arrayMenuItem[i]?.img ?? "";
-    let title = arrayMenuItem[i]?.title ?? "";
-    let price = arrayMenuItem[i]?.price ?? "";
-    let discount = arrayMenuItem[i]?.discount ?? "";
-    let id = arrayMenuItem[i]?.id ?? "";
-
-    outputProduct +=
-      "<div class='products__box'>" +
-      "<div class='products__products-icons'>" +
-      "<div onClick='addToCart(this)' price=" +
-      price +
-      " name=" +
-      title +
-      " class='fa fa-shopping-cart products__cart'></div>" +
-      "<div class='fa fa-heart products__heart-" +
-      id +
-      "'" +
-      "id=" +
-      id +
-      " onClick='favoriteItem(this)'></div>" +
-      "</div>" +
-      "<div class='products__image'>" +
-      "<img class='products__image-item' alt='' src=" +
-      image +
-      ">" +
-      "<div class='products__image-cover'></div>"+
-      "</div>" +
-      "<div class='products__content'>" +
-      "<h3 class='products__title'>" +
-      title +
-      "</h3>" +
-      "<div class='products__stars'>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star-half-alt'></i>" +
-      "</div>" +
-      "<div class='products__price'>" +
-      price +
-      "<span class='products__span-price'>" +
-      discount +
-      "</span></div>" +
-      "</div>" +
-      "</div>";
-  }
-
-  const productContent = document.querySelector(".products__container");
-  productContent.innerHTML = outputProduct;
-}
-
-function searchProduct(title) {
-  var outputProduct = "";
-
-  var listItembyFilter = arrayMenuItem.filter(function (item) {
-    if (item.title === null) {
-      return;
-    }
-
-    return item.title == title;
-  });
-
-  for (var i in listItembyFilter) {
-    let image = listItembyFilter[i]?.img ?? "";
-    let title = listItembyFilter[i]?.title ?? "";
-    let price = listItembyFilter[i]?.price ?? "";
-    let discount = listItembyFilter[i]?.discount ?? "";
-    let id = listItembyFilter[i]?.id ?? "";
-
-    outputProduct +=
-      "<div class='products__box'>" +
-      "<div class='products__products-icons'>" +
-      "<div onClick='addToCart(this)' price=" +
-      price +
-      " name=" +
-      title +
-      " class='fa fa-shopping-cart products__cart'></div>" +
-      "<div class='fa fa-heart products__heart-"+id+"' id=" +
-      id +
-      " onClick='favoriteItem(this)'></div>" +
-      "</div>" +
-      "<div class='products__image'>" +
-      "<img alt='' src=" +
-      image +
-      ">" +
-      "</div>" +
-      "<div class='products__content'>" +
-      "<h3 class='products__title'>" +
-      title +
-      "</h3>" +
-      "<div class='products__stars'>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star'></i>" +
-      "<i class='fa fa-star-half-alt'></i>" +
-      "</div>" +
-      "<div class='products__price'>" +
-      price +
-      "<span class='products__span-price'>" +
-      discount +
-      "</span></div>" +
-      "</div>" +
-      "</div>";
-  }
-
-  const productContent = document.querySelector(".products__container");
-  productContent.innerHTML = outputProduct;
-}
-
 function addToCart(event) {
   const name = event.getAttribute("name") ?? "";
   const price = event.getAttribute("price") ?? "";
@@ -344,45 +230,13 @@ function deleteAllItemCart() {
   displayCart();
 }
 
-function favoriteItem(event) {
-  let id = event?.id ?? 0;
-  const products__heart = document.querySelector(".products__heart-" + id);
-  products__heart.classList.toggle("like");
-}
 // *****************************************
 // Triggers / Events
 // *****************************************
 const numberCart = document.querySelector(".number-cart");
 numberCart.textContent = shoppingCart.totalCount();
 const lk_cart = document.querySelector(".header__cart");
-const lk__search = document.querySelector(".header__label");
 const checkout = document.querySelector(".header__btn-checkout");
-
-if (document.getElementById("searchBox").value.length == 0) {
-  product();
-}
-//submit form when 'Enter' key is pressed while in myInputID
-document
-  .getElementById("searchBox")
-  .addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-      var title = document.getElementById("searchBox").value;
-      searchProduct(title.toLowerCase());
-
-      if (document.getElementById("searchBox").value.length == 0) {
-        product();
-      }
-    }
-  });
-
-lk__search.addEventListener("click", event => {
-  var title = document.getElementById("searchBox").value;
-  searchProduct(title.toLowerCase());
-
-  if (document.getElementById("searchBox").value.length == 0) {
-    product();
-  }
-});
 
 lk_cart.addEventListener("click", () => {
   displayCart();

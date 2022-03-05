@@ -1,0 +1,117 @@
+.products {
+  &__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    color: black;
+    margin: 2% auto;
+    border-radius: 40px;
+    padding: 8px 0;
+    text-overflow: ellipsis;
+    margin-top: 16px;
+    cursor: pointer;
+    display: none;
+  }
+
+  &__item {
+    font-weight: 400;
+    // background-color: black;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+    // &:hover {
+    //   background: black;
+    //   color: white;
+    //   cursor: pointer;
+    // }
+  }
+}
+
+.is-show {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 53px;
+  height: 53px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+.loading {
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  border: transparent;
+  border-top: 3px solid #ffcb23;
+  border-radius: 50%;
+  animation: round 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+//'mobile': width < 740px
+@media only screen and (max-width: 46.1875em) {
+  .products {
+    &__pagination {
+      width: 100%;
+    }
+
+    &__item {
+      width: 20px;
+      height: 20px;
+      line-height: 17px;
+      font-size: 13px;
+    }
+  }
+}
+
+//'table': width >= 740px and width < 1024px
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .products {
+    &__pagination {
+      width: 70%;
+    }
+
+    // &__item {
+
+    // }
+  }
+}
+
+// 'laptop': '1024px',
+// @media screen and (min-width: 1024px) {
+
+// }

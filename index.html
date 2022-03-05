@@ -130,9 +130,20 @@
   <!-- menu -->
 
   <section class="products" id="products">
-    <h1 class="products__heading"> our <span class="products__span-product">products</span> </h1>
+    <h1 class="products__heading"> our <span class="products__span-product">products</span> 
+    </h1>
+    
+    <div class="products__wrapper">
+      <select class="products__sort"></select>
+    </div>
 
-    <div class="products__container"></div>
+    <div class="products__container">
+      <div class="loader"></div>
+    </div>
+
+    <div class="products__pagination" id="pagination">
+      <div class="products__list"></div>
+    </div>
   </section><!-- product -->
 
   <div class="back-top">
@@ -145,5 +156,7 @@
 <script type="text/javascript" src="static/src/js/scroll.js"></script>
 <script type="text/javascript" src="static/src/js/cart.js"></script>
 <script type="text/javascript" src="static/src/js/notification.js"></script>
-
+<script type="module" src="static/src/js/api.js"></script>
+<script type="module" src="static/src/js/product.js"></script>
+<script type="text/javascript" src="static/src/js/favorite.js"></script>
 </html>
