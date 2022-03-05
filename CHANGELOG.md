@@ -4,7 +4,7 @@
   - Responsive mobile first
   - Add cart
   - Like product
-  - Call api with local storage
+  - Call api with localStorage
   - Scroll page
   - Search product
   - Loading when call api
