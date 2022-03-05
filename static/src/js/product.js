@@ -202,14 +202,30 @@ if (Object.keys(listProduct).length === 0) {
     productContent.innerHTML = outputProduct;
   }
 
-  async function sortProduct(pagram, listProduct) {
+  function reverseArray(input) {
+    let newArray = new Array;
+    for(let i = input.length-1; i >= 0; i--) {
+      newArray.push(input[i]);
+    }
+    return newArray;
+}
+
+  async function sortProduct() {
     let lk_sort = document.querySelector(".products__sort");
-    let listDataSort = '';
+    let listDataSort = "";
     const d = new Date();
     let year = d.getFullYear();
+    //tăng dần
+    let sortByAscending = listProduct.sort((a, b) => {
+      return (
+        new Date(b?.data?.[0]?.date_created) -
+        new Date(a?.data?.[0]?.date_created)
+      );
+    });
+    //giảm dần
+    let sortByDescending = reverseArray(sortByAscending);
 
     lk_sort.addEventListener("click", async function (event) {
-      // console.log(event.target.value)
 
       switch (event.target.value) {
         case "newest":
@@ -222,29 +238,26 @@ if (Object.keys(listProduct).length === 0) {
           listDataSort = data?.collection?.items ?? {};
           break;
 
-          case "a-z":
-          data = await getSearchList(listProduct, year - 10);
-          listDataSort = data?.collection?.items ?? {};
+        case "a-z":
+          listDataSort = sortByAscending;
           break;
 
-          case "z-a":
-          data = await getSearchList(listProduct, year - 10);
-          listDataSort = data?.collection?.items ?? {};
+        case "z-a":
+          listDataSort = sortByDescending;
           break;
 
         default:
-        // code block
+          listDataSort = data?.collection?.items ?? {};
       }
 
       let outputProduct = "";
       for (let i in listDataSort) {
-        console.log(i)
         let image = listDataSort[i]?.links[0]?.href ?? "";
         let title = listDataSort[i]?.data?.[0]?.title ?? "";
         let price = 0;
         let discount = 10;
         let id = listDataSort[i]?.data?.[0]?.nasa_id ?? "";
-  
+
         outputProduct +=
           "<div class='products__box'>" +
           "<div class='products__products-icons'>" +
@@ -283,15 +296,12 @@ if (Object.keys(listProduct).length === 0) {
           "</div>" +
           "</div>";
       }
-  
+
       const productContent = document.querySelector(".products__container");
       productContent.innerHTML = outputProduct;
     });
-
-
   }
 
-  sortProduct();
   if (document.getElementById("searchBox").value.length === 0) {
     // getProductList();
   }
@@ -307,6 +317,7 @@ if (Object.keys(listProduct).length === 0) {
 
   var init = () => {
     // SetupPagination();
+    sortProduct();
     let firstPage = listProduct.slice(10, 20);
     getProductList(firstPage);
     // document.querySelector(".products__item").classList.add("is-show");
