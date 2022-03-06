@@ -189,9 +189,10 @@ function displayCart() {
       "<div class='header__cart-desc'>" +
       cartArray[i].name +
       "</div>" +
-      "<div class='header__cart-count'>" +
-      cartArray[i].count +
-      "</div>" +
+    "<button class='header__minus-item' onclick='minusItem(this)' value="+cartArray[i].count+" data-name=" + cartArray[i].name + ">-</button>"+
+    "<input type='' id='header__cart-count' class='header__cart-count' value="+cartArray[i].count+">" +
+    "<button class='header__plus-item' onclick='plusItem(this)' value="+cartArray[i].count+" data-name=" + cartArray[i].name + ">+</button>"+
+    "</input>" +
       "<div class='header__cart-price'>" +
       cartArray[i].price +
       "</div>" +
@@ -236,8 +237,24 @@ function deleteAllItemCart() {
 const numberCart = document.querySelector(".number-cart");
 numberCart.textContent = shoppingCart.totalCount();
 const lk_cart = document.querySelector(".header__cart");
-const checkout = document.querySelector(".header__btn-checkout");
+displayCart();
 
-lk_cart.addEventListener("click", () => {
+let lk_count = document.querySelector(".header__cart-count");
+function plusItem(event) {
+let name = event.getAttribute("data-name");
+shoppingCart.addItemToCart(name);
+displayCart();
+}
+
+function minusItem(event) {
+  let name =  event.getAttribute("data-name");
+  shoppingCart.removeItemFromCart(name);
   displayCart();
-});
+}
+
+lk_count.addEventListener("click", event => {
+  let name = lk_count.getAttribute("name");
+  let count = Number(event.target.value);
+  shoppingCart.setCountForItem(name, count);
+  displayCart();
+})

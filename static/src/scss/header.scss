@@ -1,17 +1,25 @@
 @use "../scss/vars/vars.scss" as vars;
 @use "../scss/mixin/mixin.scss" as mixin;
 
-.number-cart {
-  color: vars.$primary-100;
-  width: 23px;
-  height: 13px;
-  border-radius: 50%;
-  padding: 3px;
-  text-align: center;
-  font-size: 9px;
-  right: 0;
-  transform: translate(-21px, 22px);
-  position: absolute;
+.header {
+  .number-cart {
+    color: vars.$primary-100;
+    width: 23px;
+    height: 13px;
+    border-radius: 50%;
+    padding: 3px;
+    text-align: center;
+    font-size: 9px;
+    right: 0;
+    transform: translate(-21px, 22px);
+    position: absolute;
+  }
+
+  &__minus-item,
+  &__plus-item {
+    background: white;
+    cursor: pointer;
+  }
 }
 
 //'mobile': width < 740px
@@ -145,7 +153,8 @@
 
     &__cart-count {
       width: 10%;
-      font-size: 10px;
+      text-align: center;
+      font-size: 15px;
       color: vars.$accent2-800;
     }
     
@@ -359,7 +368,8 @@
 
     &__cart-count {
       width: 10%;
-      font-size: 10px;
+      text-align: center;
+      font-size: 15px;
       color: vars.$accent2-800;
     }
     
@@ -564,8 +574,9 @@
 
     &__cart-count {
       width: 10%;
-      font-size: 10px;
+      font-size: 15px;
       color: vars.$accent2-800;
+      text-align: center;
     }
     
     &__total {

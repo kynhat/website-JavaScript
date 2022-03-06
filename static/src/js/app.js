@@ -80,7 +80,8 @@
       !event.target.matches(".header__total") &&
       !event.target.matches(".header__wrapper") &&
       !event.target.matches(".header__btn-danger") &&
-      !event.target.matches(".header__btn-delete-all")
+      !event.target.matches(".header__minus-item")&&
+      !event.target.matches(".header__plus-item")
     ) {
       cartItem.classList.remove("is-active");
     }

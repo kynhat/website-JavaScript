@@ -1,7 +1,7 @@
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
 favorites.forEach(function (favorite) {
   setTimeout(() => {
-    // console.log(document.getElementById(favorite))
     if(document.getElementById(favorite) != null) {
       document.getElementById(favorite).classList.add("like");
     }

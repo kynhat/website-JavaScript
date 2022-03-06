@@ -1,4 +1,4 @@
-.number-cart {
+.header .number-cart {
   color: #FFFFFF;
   width: 23px;
   height: 13px;
@@ -9,6 +9,10 @@
   right: 0;
   transform: translate(-21px, 22px);
   position: absolute;
+}
+.header__minus-item, .header__plus-item {
+  background: white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 46.1875em) {
@@ -126,7 +130,8 @@
   }
   .header__cart-count {
     width: 10%;
-    font-size: 10px;
+    text-align: center;
+    font-size: 15px;
     color: #150333;
   }
   .header__total {
@@ -310,7 +315,8 @@
   }
   .header__cart-count {
     width: 10%;
-    font-size: 10px;
+    text-align: center;
+    font-size: 15px;
     color: #150333;
   }
   .header__total {
@@ -482,8 +488,9 @@
   }
   .header__cart-count {
     width: 10%;
-    font-size: 10px;
+    font-size: 15px;
     color: #150333;
+    text-align: center;
   }
   .header__total {
     width: 20%;
