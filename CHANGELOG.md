@@ -9,3 +9,10 @@
   - Search product
   - Loading when call api
   - Sort data as: newest / oldest, a-z / z-a 
+  - Plus and mimus Item
+  - Notification
+  - Unit Testing
+    - Sort
+    - Get api
+    - Add, remove
+    - Total count

@@ -2,16 +2,14 @@
 @use "../scss/vars/vars.scss" as vars;
 
 .noti {
+  @include mixin.flexBox('',center, end);
   position: fixed;
   bottom: 0;
-  display: flex;
   background-color: black;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   transform: translateY(150%);
   animation: noti 4s forwards 1 linear;
-  justify-content: end;
-  align-items: center;
   z-index: 1;
 
   &__image {

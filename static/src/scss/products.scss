@@ -13,16 +13,14 @@
   }
 
   &__wrapper {
-    display: flex;
-    justify-content: flex-end;
+    @include mixin.flexBox(row,center, end);
   }
 
   &__sort {
-    display: flex;
+    @include mixin.flexBox(row,'', end);
     border: 1px solid;
     padding: 15px;
     width: 1  0%;
-    justify-content: end;
     margin-bottom: 20px;
   }
 }

@@ -938,14 +938,18 @@
 }
 .products__wrapper {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
 }
 .products__sort {
   display: flex;
+  flex-direction: row;
+  align-items: "";
+  justify-content: end;
   border: 1px solid;
   padding: 15px;
   width: 1 0%;
-  justify-content: end;
   margin-bottom: 20px;
 }
 
@@ -1309,16 +1313,17 @@ a {
   }
 }
 .noti {
+  display: flex;
+  flex-direction: "";
+  align-items: center;
+  justify-content: end;
   position: fixed;
   bottom: 0;
-  display: flex;
   background-color: black;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   transform: translateY(150%);
   animation: noti 4s forwards 1 linear;
-  justify-content: end;
-  align-items: center;
   z-index: 1;
 }
 .noti__image {

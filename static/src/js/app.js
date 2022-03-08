@@ -57,7 +57,7 @@
   });
 
   function setAttributes(el, attrs) {
-    for (var key in attrs) {
+    for (let key in attrs) {
       el.setAttribute(key, attrs[key]);
     }
   }
@@ -90,7 +90,7 @@
   document.addEventListener("click", handleClickOutMenu);
 
   // giống như ham main()
-  var init = () => {
+  let init = () => {
     //  setAttributes();
   };
 
