@@ -71,8 +71,10 @@ function getProductList(arrayProductItem) {
       setTimeout(() => {
         let myobj = document.querySelector(".loading");
         let hideImage = document.querySelector(".hide-image");
-        hideImage.classList.remove("hide-image");
-        myobj.remove();
+        if (hideImage != null) {
+          hideImage.classList.remove("hide-image");
+          myobj.remove();
+        }
       }, 500);
 
       htmlloadingImage +=
