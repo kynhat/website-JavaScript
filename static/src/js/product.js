@@ -128,7 +128,7 @@ async function searchProduct(pagram) {
   pagram.toUpperCase();
   let dataSearch = await getSearchList(pagram.toUpperCase());
   let listDataSearchProduct = dataSearch?.collection?.items ?? {};
-  getProductList(listDataSearchProduct.slice(10, 20));
+  getProductList(listDataSearchProduct.slice(10, 22));
 }
 
 function reverseArray(input) {
@@ -210,5 +210,5 @@ listSortProduct.addEventListener("click", event => {
   });
 });
 
-sortProduct(listProduct.slice(10, 20));
-getProductList(listProduct.slice(10, 20));
+sortProduct(listProduct.slice(10, 22));
+getProductList(listProduct.slice(10, 22));
