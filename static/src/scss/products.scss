@@ -20,7 +20,6 @@
     @include mixin.flexBox(row,'', end);
     border: 1px solid;
     padding: 15px;
-    width: 1  0%;
     margin-bottom: 20px;
   }
 }
@@ -202,7 +201,7 @@
     }
 
     &__heart {
-      background-color: red;
+      background-color: vars.$state2-500;
     }
 
     &__stars {

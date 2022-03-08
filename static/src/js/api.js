@@ -1,6 +1,3 @@
-export function handleError() {
-  console.log("Something wrong with your api");
-}
 
 export default async function getSearchList(param = "GSFC", date = "") {
   const headers = {

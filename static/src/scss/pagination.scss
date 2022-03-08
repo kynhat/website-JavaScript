@@ -1,12 +1,14 @@
+@use "../scss/vars/vars.css" as vars;
+
 .products {
   &__pagination {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: vars.$primary-50;
     width: 50%;
-    color: black;
+    color: vars.$secondary-500;
     margin: 2% auto;
     border-radius: 40px;
     padding: 8px 0;
@@ -18,34 +20,27 @@
 
   &__item {
     font-weight: 400;
-    // background-color: black;
-    color: black;
+    color: vars.$secondary-500;
     text-align: center;
     display: inline-block;
     width: 40px;
     height: 40px;
     line-height: 40px;
     border-radius: 50%;
-    border: 1px solid black;
-
-    // &:hover {
-    //   background: black;
-    //   color: white;
-    //   cursor: pointer;
-    // }
+    border: 1px solid vars.$secondary-500;
   }
 }
 
 .is-show {
-  background: black;
-  color: white;
+  background: vars.$secondary-500;
+  color: vars.$primary-50;
   cursor: pointer;
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
+  border: 16px solid vars.$primary-50;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid vars.$accent3-800;
   width: 53px;
   height: 53px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -58,7 +53,7 @@
   height: 100px;
   width: 100px;
   border: transparent;
-  border-top: 3px solid #ffcb23;
+  border-top: 3px solid vars.$accent1-100;
   border-radius: 50%;
   animation: round 2s linear infinite;
 }
@@ -106,8 +101,3 @@
     }
   }
 }
-
-// 'laptop': '1024px',
-// @media screen and (min-width: 1024px) {
-
-// }

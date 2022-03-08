@@ -12,11 +12,10 @@ function favoriteItem(e) {
   let id = e.id,
     item = e,
     index = favorites.indexOf(id);
-    // console.log(item)
 
   if (!id) return;
   // item is not favorite
-  if (index == -1) {
+  if (index === -1) {
     favorites.push(id);
     item.classList.add("like");
     // item is already favorite

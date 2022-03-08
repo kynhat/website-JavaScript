@@ -7,7 +7,7 @@ $btn-bg: #8f69e8;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom left, white, $purple);
+  background: linear-gradient(to bottom left, vars.$primary-50, $purple);
   @include mixin.flexBox(column,center, center);
   z-index: 1000;
 
@@ -17,7 +17,7 @@ $btn-bg: #8f69e8;
     height: 386px;
     padding: 50px;
     border-radius: 20px;
-    background: linear-gradient(80deg, white, $purple);
+    background: linear-gradient(80deg, vars.$primary-50, $purple);
     opacity: 0;
     visibility: hidden;
     transition: all 0.25s linear;
@@ -40,7 +40,7 @@ $btn-bg: #8f69e8;
     margin: 10px;
     @include mixin.flexBox('',center, center);
 
-    background-color: white;
+    background-color: vars.$primary-50;
     cursor: pointer;
     border-radius: 50px;
     z-index: 1000;
@@ -49,7 +49,7 @@ $btn-bg: #8f69e8;
 
     &:hover {
       background: $purple;
-      color: white;
+      color: vars.$primary-50;
       transition: all 0.5s linear;
       transform: rotate(270deg);
     }
@@ -91,7 +91,7 @@ $btn-bg: #8f69e8;
 
   &__agree {
     background-color: $purple;
-    color: white;
+    color: vars.$primary-50;
 
     &:hover {
       background: $btn-bg;

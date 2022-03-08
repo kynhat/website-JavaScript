@@ -89,12 +89,5 @@
   //when click out close searh and cart and  menu
   document.addEventListener("click", handleClickOutMenu);
 
-  // giống như ham main()
-  let init = () => {
-    //  setAttributes();
-  };
 
-  window.onload = function () {
-    init();
-  };
 })();
